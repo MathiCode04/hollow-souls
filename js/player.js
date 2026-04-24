@@ -636,7 +636,7 @@ class Player {
     }
 
     // Cape / cloak (trapezoid)
-    ctx.fillStyle = this.hitFlash ? '#ffffff' : (this.phase2 ? '#400060' : '#1a0840');
+    ctx.fillStyle = this.hitFlash ? '#ffffff' : '#1a0840';
     ctx.beginPath();
     ctx.moveTo(this.x + 4, this.y + 10);
     ctx.lineTo(this.x + this.w - 4, this.y + 10);

@@ -189,7 +189,7 @@ const UI = (() => {
   // ── Phase announce banner ─────────────────────────────────────────────
   function _drawPhaseAnnounce(ctx, viewW, viewH) {
     const t     = phaseAnnounceTimer / 120;
-    const alpha = t < 0.2 ? t / 0.2 : t > 0.8 ? (t - 0.8) / 0.2 : 1;
+    const alpha = t < 0.2 ? t / 0.2 : t > 0.8 ? 1 - (t - 0.8) / 0.2 : 1;
     ctx.save();
     ctx.globalAlpha = alpha;
     ctx.fillStyle   = 'rgba(0,0,0,0.5)';

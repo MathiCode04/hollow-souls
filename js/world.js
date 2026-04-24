@@ -80,7 +80,7 @@ class World {
     ];
 
     // ── Boss arena wall (blocks passage until boss is defeated) ───────────
-    this.bossGate = { x: 1050, y: H - TILE*10, w: TILE, h: TILE*9, broken: false };
+    this.bossGate = { x: 1050, y: H - TILE*10, w: TILE, h: TILE*10, broken: false };
   }
 
   _addPlatform(x, y, w, h) {
