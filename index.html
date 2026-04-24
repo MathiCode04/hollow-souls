@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hollow Souls</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    #gameCanvas {
+      display: block;
+      image-rendering: pixelated;
+      border: 2px solid #1a1a2e;
+      box-shadow: 0 0 40px rgba(100, 60, 200, 0.4);
+    }
+    #overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0,0,0,0.85);
+      color: #ccc;
+      z-index: 10;
+    }
+    #overlay h1 {
+      font-size: 3rem;
+      color: #a070ff;
+      text-shadow: 0 0 20px #a070ff;
+      letter-spacing: 4px;
+      margin-bottom: 0.5rem;
+    }
+    #overlay p {
+      font-size: 1rem;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+    #overlay .controls {
+      font-size: 0.8rem;
+      color: #555;
+      line-height: 1.8;
+      text-align: center;
+    }
+    #overlay button {
+      padding: 0.75rem 2.5rem;
+      font-size: 1.1rem;
+      background: #3a1a6e;
+      color: #c8a0ff;
+      border: 2px solid #7040d0;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: 2px;
+      transition: all 0.2s;
+      margin-bottom: 1.5rem;
+    }
+    #overlay button:hover {
+      background: #6030b0;
+      box-shadow: 0 0 20px #a070ff;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+  <div id="overlay">
+    <h1>HOLLOW SOULS</h1>
+    <p>A Metroidvania of Shadow and Steel</p>
+    <button id="startBtn">ENTER THE VOID</button>
+    <div class="controls">
+      <strong style="color:#a070ff">Controls</strong><br>
+      Arrow Keys / WASD — Move &amp; Jump<br>
+      Z / J — Attack (hold for charge)<br>
+      X / K — Dash (I-frames)<br>
+      C / L — Focus / Heal (hold, costs soul)<br>
+      V — Fireball Spell (costs soul)<br>
+      B — Shockwave Spell (costs soul)<br>
+      Down + Attack in air — Pogo Bounce<br>
+      Attack exactly as enemy swings — Parry!<br>
+      Attack cracked walls to reveal secrets<br>
+    </div>
+  </div>
+
+  <!-- Load order matters: dependencies first -->
+  <script src="js/input.js"></script>
+  <script src="js/camera.js"></script>
+  <script src="js/gameFeel.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/relics.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/enemy.js"></script>
+  <script src="js/boss.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
